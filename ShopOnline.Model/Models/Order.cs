@@ -36,10 +36,12 @@ namespace ShopOnline.Model.Models
         [MaxLength(256)]
         public string PaymentMethod { set; get; }
 
+        [MaxLength(50)]
         public string PaymentStatus { set; get; }
 
         public DateTime? CreatedDate { set; get; }
 
+        [MaxLength(50)]
         public string CreatedBy { set; get; }
 
         public bool Status { set; get; }
