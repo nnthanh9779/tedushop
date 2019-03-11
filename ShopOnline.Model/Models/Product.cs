@@ -47,7 +47,7 @@ namespace ShopOnline.Model.Models
         public int CategoryID { set; get; }
 
         [ForeignKey("CategoryID")]
-        public virtual ProductCategory ProductCategorie { set; get; }
+        public virtual ProductCategory ProductCategory { set; get; }
 
         public virtual IEnumerable<OrderDetail> OrderDetails { set; get; }
         public virtual IEnumerable<ProductTag> ProductTags { set; get; }
