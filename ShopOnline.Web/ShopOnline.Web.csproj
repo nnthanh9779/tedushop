@@ -193,6 +193,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\Startup.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -215,6 +216,12 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\plugins\angular\angular-csp.css" />
+    <Content Include="Scripts\plugins\angular\angular.js" />
+    <Content Include="Scripts\plugins\angular\angular.min.js" />
+    <Content Include="Scripts\plugins\angular\index.js" />
+    <Content Include="Scripts\spa\app.js" />
+    <Content Include="Scripts\spa\shopDirective.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -227,15 +234,23 @@
   <ItemGroup>
     <Folder Include="Assets\Admin\" />
     <Folder Include="Assets\Client\" />
-    <Folder Include="Scripts\plugins\" />
-    <Folder Include="Scripts\spa\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="bower.json" />
+    <Content Include=".bowerrc" />
     <None Include="packages.config" />
+    <Content Include="Scripts\plugins\angular\.bower.json" />
+    <Content Include="Scripts\plugins\angular\angular.min.js.gzip" />
+    <Content Include="Scripts\plugins\angular\angular.min.js.map" />
+    <Content Include="Scripts\plugins\angular\bower.json" />
+    <Content Include="Scripts\plugins\angular\LICENSE.md" />
+    <Content Include="Scripts\plugins\angular\package.json" />
+    <Content Include="Scripts\plugins\angular\README.md" />
+    <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ShopOnline.Common\ShopOnline.Common.csproj">
@@ -281,6 +296,7 @@
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
+      <UserProperties bower_1json__JSONSchema="http://json.schemastore.org/bower.json" _1bowerrc__JSONSchema="http://json.schemastore.org/bowerrc" />
     </VisualStudio>
   </ProjectExtensions>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
