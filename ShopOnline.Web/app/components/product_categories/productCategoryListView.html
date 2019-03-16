@@ -29,18 +29,23 @@
                     <div class="card-body">
                         <table class="table table-bordered">
                             <tr>
-                                <th style="width: 10px">ID</th>
+                                <th>ID</th>
                                 <th>Tên danh mục</th>
                                 <th>Ngày tạo</th>
-                                <th style="width: 40px">Status</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
                             </tr>
                             <tr ng-repeat="item in productCategories">
                                 <td>{{item.ID}}</td>
                                 <td>{{item.Name}}</td>
                                 <td>
-                                    {{item.CreateDate}}
+                                    {{item.CreatedDate | date: 'dd/MM/yyyy hh:mm:ss'}}
                                 </td>
-                                <td><span class="badge bg-danger">{{item.Status}}</span></td>
+                                <td><span ng-class="{'badge bg-success' :item.Status == true, 'badge bg-danger':item.Status == false}">{{item.Status | statusFilter}}</span></td>
+                                <td>
+                                    <button class="btn btn-flat btn-outline-primary"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-flat btn-outline-danger"><i class="fa fa-trash"></i></button>
+                                </td>
                             </tr>
                         </table>
                     </div>
