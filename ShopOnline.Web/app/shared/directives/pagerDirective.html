@@ -1,0 +1,21 @@
+﻿
+<div ng-hide="(!pagesCount || pagesCount < 2)" style="display:inline" class="card-footer clearfix">
+    <ul class="pagination pagination-sm m-0 float-right">
+        <li class="page-item"><a ng-hide="page == 0" ng-click="search(0)" class="page-link"><<</a></li>
+        <li class="page-item"><a ng-hide="page == 0" ng-click="search(page-1)" class="page-link"><</a></li>
+        <li ng-repeat="n in range()" ng-class="{active: n == page}" class="page-item">
+            <a ng-click="search(n)" ng-if="n != page" class="page-link">{{n+1}}</a>
+            <span ng-if="n == page"  class="page-link">{{n+1}}</span>
+        </li>
+        <li class="page-item"><a ng-hide="page == pagesCount - 1" ng-click="search(pagePlus(1))" class="page-link">></a></li>
+        <li class="page-item"><a ng-hide="page == pagesCount - 1" ng-click="search(pagesCount - 1)" class="page-link">>></a></li>
+    </ul>
+</div>
+
+<!--<ul class="pagination pagination-sm m-0 float-right">
+                           <li class="page-item"><a class="page-link" href="#">&laquo;</a></li>
+                           <li class="page-item"><a class="page-link" href="#">1</a></li>
+                           <li class="page-item"><a class="page-link" href="#">2</a></li>
+                           <li class="page-item"><a class="page-link" href="#">3</a></li>
+                           <li class="page-item"><a class="page-link" href="#">&raquo;</a></li>
+                       </ul>-->

@@ -26,6 +26,8 @@
     <link href="~/Assets/admin/libs/bootstrap-wysihtml5/dist/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet" />
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini" ng-app="shoponline">
     <div class="wrapper">
@@ -495,13 +497,15 @@
     <script src="~/Assets/admin/js/adminlte.js"></script>
 
     <!-- Begin embed angular js -->
-    <script src="~/Assets/admin/libs/angular/angular.js"></script>
+    @*<script src="~/Assets/admin/libs/angular/angular.min.js"></script>*@
     <script src="~/Assets/admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="~/app/app.js"></script>
     <script src="~/app/shared/modules/shoponline.common.js"></script>
     <script src="~/app/shared/filters/statusFilter.js"></script>
+    <script src="~/app/shared/directives/pagerDirective.js"></script>
     @*service*@
     <script src="~/app/shared/service/apiService.js"></script>
+
     @*module*@
     <script src="~/app/components/product_categories/productCategories.module.js"></script>
     <script src="~/app/components/products/products.module.js"></script>
