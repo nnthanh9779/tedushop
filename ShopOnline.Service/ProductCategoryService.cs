@@ -15,6 +15,7 @@ namespace ShopOnline.Service
         void Update(ProductCategory ProductCategory);
         ProductCategory Delete(int id);
         IEnumerable<ProductCategory> GetAll();
+        IEnumerable<ProductCategory> GetAll(string keyword);
         IEnumerable<ProductCategory> GetAllParentID(int parentID);
         ProductCategory GetById(int id);
 
@@ -43,6 +44,16 @@ namespace ShopOnline.Service
         public IEnumerable<ProductCategory> GetAll()
         {
             return _ProductCategoryRepository.GetAll();
+        }
+
+        public IEnumerable<ProductCategory> GetAll(string keyword)
+        {
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                return _ProductCategoryRepository.GetMulti(x => x.Name.Contains(keyword) || x.Description.Contains(keyword));
+            }
+            else
+                return _ProductCategoryRepository.GetAll();
         }
 
         public IEnumerable<ProductCategory> GetAllParentID(int parentId)
