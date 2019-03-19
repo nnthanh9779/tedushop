@@ -9,25 +9,13 @@
     <!-- Font Awesome -->
     <link href="~/Assets/admin/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <!-- Ionicons -->
-    <link href="~/Assets/admin/libs/ionicons/css/ionicons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!--Toastr : craete notification-->
+    <link href="~/Assets/admin/libs/toastr/toastr.css" rel="stylesheet" />
     <!-- Theme style -->
     <link href="~/Assets/admin/css/adminlte.min.css" rel="stylesheet" />
-    <!-- iCheck -->
-    <link href="~/Assets/admin/libs/iCheck/skins/flat/blue.css" rel="stylesheet" />
-    <!-- Morris chart -->
-    <link href="~/Assets/admin/libs/morris.js/morris.css" rel="stylesheet" />
-    <!-- jvectormap -->
-    <link href="~/Assets/admin/libs/jvectormap/jquery-jvectormap.css" rel="stylesheet" />
-    <!-- Date Picker -->
-    <link href="~/Assets/admin/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css" rel="stylesheet" />
-    <!-- Daterange picker -->
-    <link href="~/Assets/admin/libs/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
-    <!-- bootstrap wysihtml5 - text editor -->
-    <link href="~/Assets/admin/libs/bootstrap-wysihtml5/dist/bootstrap-wysihtml5-0.0.2.css" rel="stylesheet" />
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.7/angular.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini" ng-app="shoponline">
     <div class="wrapper">
@@ -477,18 +465,6 @@
     <script>$.widget.bridge('uibutton', $.ui.button)</script>
     <!-- Bootstrap 4 -->
     <script src="~/Assets/admin/libs/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <!-- Morris.js charts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-    <script src="~/Assets/admin/libs/morris.js/morris.min.js"></script>
-    <!-- jvectormap -->
-    <script src="~/Assets/admin/libs/jvectormap/jquery-jvectormap.js"></script>
-    <!-- daterangepicker -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
-    <script src="~/Assets/admin/libs/bootstrap-daterangepicker/daterangepicker.js"></script>
-    <!-- datepicker -->
-    <script src="~/Assets/admin/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
-    <!-- Bootstrap WYSIHTML5 -->
-    <script src="~/Assets/admin/libs/bootstrap-wysihtml5/dist/bootstrap-wysihtml5-0.0.2.min.js"></script>
     <!-- SlimScroll -->
     <script src="~/Assets/admin/libs/slimScroll/jquery.slimscroll.js"></script>
     <!-- FastClick -->
@@ -497,14 +473,18 @@
     <script src="~/Assets/admin/js/adminlte.js"></script>
 
     <!-- Begin embed angular js -->
-    @*<script src="~/Assets/admin/libs/angular/angular.min.js"></script>*@
+    <script src="~/Assets/admin/libs/angular/angular.min.js"></script>
     <script src="~/Assets/admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <!--Toastr : craete notification-->
+    <script src="~/Assets/admin/libs/toastr/toastr.js"></script>
+
     <script src="~/app/app.js"></script>
     <script src="~/app/shared/modules/shoponline.common.js"></script>
     <script src="~/app/shared/filters/statusFilter.js"></script>
     <script src="~/app/shared/directives/pagerDirective.js"></script>
     @*service*@
     <script src="~/app/shared/service/apiService.js"></script>
+    <script src="~/app/shared/service/notificationService.js"></script>
 
     @*module*@
     <script src="~/app/components/product_categories/productCategories.module.js"></script>

@@ -58,8 +58,11 @@
                         </table>
                     </div>
                     <!-- /.card-body -->
-                    <!--paging-->
-                    <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getProductCategories(page)"></pager-directive>
+                    <div class="card-footer clearfix">
+                        <div class="pull-left">Trang: {{page +1}} - Tổng số trang: {{pagesCount}} - Tổng số bảng ghi: {{totalCount}}</div>
+                        <!--paging-->
+                        <pager-directive page="{{page}}" custom-path="{{customPath}}" pages-count="{{pagesCount}}" total-count="{{totalCount}}" search-func="getProductCategories(page)"></pager-directive>
+                    </div>
                 </div>
             </div>
         </div>
