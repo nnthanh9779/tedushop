@@ -23,13 +23,21 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Bordered Table</h3>
-                        <div class="card-tools">
-                            <div class="input-group input-group-sm w-100">
-                                <input type="text" name="table_search" class="form-control float-right" placeholder="Search" ng-model="keyword">
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-default" ng-click="search()"><i class="fa fa-search"></i></button>
+                        <h3 class="card-title">Danh mục sản phẩm</h3>
+                        <div class="card-tools form-row">
+                            <div class="col-7">
+                                <div class="input-group input-group-sm w-100">
+                                    <input type="text" name="table_search" class="form-control" placeholder="Search" ng-model="keyword">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-default" ng-click="search()"><i class="fa fa-search"></i></button>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="col">
+                                <a ui-sref="add_product_category" class="btn btn-primary btn-flat pt-1 pb-1">
+                                    <i class="fa fa-plus-circle"></i>
+                                    Thêm mới
+                                </a>
                             </div>
                         </div>
                     </div>
