@@ -230,12 +230,15 @@
     <Content Include="app\components\product_categories\productCategories.module.js" />
     <Content Include="app\components\product_categories\ProductCategoryAddController.js" />
     <Content Include="app\components\product_categories\ProductCategoryAddView.html" />
+    <Content Include="app\components\product_categories\ProductCategoryEditController.js" />
+    <Content Include="app\components\product_categories\ProductCategoryEditView.html" />
     <Content Include="app\components\product_categories\productCategoryListController.js" />
     <Content Include="app\components\product_categories\productCategoryListView.html" />
     <Content Include="app\shared\directives\pagerDirective.html" />
     <Content Include="app\shared\directives\pagerDirective.js" />
     <Content Include="app\shared\filters\statusFilter.js" />
     <Content Include="app\shared\service\apiService.js" />
+    <Content Include="app\shared\service\commonService.js" />
     <Content Include="app\shared\service\notificationService.js" />
     <Content Include="Assets\admin\css\adminlte.css" />
     <Content Include="Assets\admin\css\adminlte.min.css" />
