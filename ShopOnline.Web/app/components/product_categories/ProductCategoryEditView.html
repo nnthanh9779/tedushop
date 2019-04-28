@@ -34,15 +34,21 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">Tên danh mục</label>
-                                <input type="text" class="form-control" id="name" placeholder="Nhập tên danh mục" ng-change="GetSeoTitle()" ng-model="productCategory.Name">
+                                <input type="text" class="form-control placeholder-danger" id="name" name="name" placeholder="Nhập tên danh mục" ng-change="GetSeoTitle()" ng-model="productCategory.Name" ng-maxlength="256" required>
+                                <small ng-show="frmAddProductCategory.name.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 256 ký tự.</small>
                             </div>
                             <div class="form-group">
                                 <label for="alias">Tiêu đề SEO</label>
-                                <input type="text" class="form-control" id="alias" placeholder="Nhập tiêu đề SEO" ng-model="productCategory.Alias">
+                                <input type="text" class="form-control placeholder-danger" id="alias" name="alias" placeholder="Nhập tiêu đề SEO" ng-model="productCategory.Alias" ng-maxlength="256" required>
+                                <small ng-show="frmAddProductCategory.alias.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 256 ký tự.</small>
                             </div>
                             <div class="form-group">
                                 <label for="description">Mô tả ngắn</label>
-                                <textarea class="form-control" id="description" placeholder="Mô tả ngắn" ng-model="productCategory.Description"></textarea>
+                                <textarea class="form-control" id="description" name="description" ng-model="productCategory.Description" ng-maxlength="500" required></textarea>
+                                <small ng-show="frmAddProductCategory.description.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 500 ký tự.</small>
                             </div>
                             <div class="form-group">
                                 <label>Danh mục cấp cha</label>
@@ -54,15 +60,19 @@
                             </div>
                             <div class="form-group">
                                 <label for="displayOrder">Thứ tự hiển thị</label>
-                                <input type="text" class="form-control" id="displayOrder" placeholder="Thứ tự hiển thị" ng-model="productCategory.DisplayOrder">
+                                <input type="text" class="form-control" id="displayOrder" ng-model="productCategory.DisplayOrder">
                             </div>
                             <div class="form-group">
                                 <label for="name">Meta Keyword</label>
-                                <input type="text" class="form-control" id="metaDescription" placeholder="Nhập tên danh mục" ng-model="productCategory.MetaKeyword">
+                                <input type="text" class="form-control" id="metaKeyword" name="metaKeyword" ng-model="productCategory.MetaKeyword" ng-maxlength="256" required>
+                                <small ng-show="frmAddProductCategory.metaKeyword.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 256 ký tự.</small>
                             </div>
                             <div class="form-group">
                                 <label for="name">Meta Description</label>
-                                <textarea class="form-control" id="metaDescription" placeholder="Nhập tên danh mục" ng-model="productCategory.MetaDescription"></textarea>
+                                <textarea class="form-control" id="metaDescription" name="metaDescription" ng-model="productCategory.MetaDescription" ng-maxlength="256" required></textarea>
+                                <small ng-show="frmAddProductCategory.metaDescription.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 256 ký tự.</small>
                             </div>
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="status" ng-model="productCategory.Status" ng-checked="productCategory.Status">

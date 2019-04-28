@@ -1,0 +1,5 @@
+﻿
+input.placeholder-danger::placeholder,
+textarea.placeholder-danger::placeholder {
+    color: red;
+}
