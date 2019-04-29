@@ -25,7 +25,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Danh mục sản phẩm</h3>
                         <div class="card-tools form-row">
-                            <div class="col-7">
+                            <div class="col-6">
                                 <div class="input-group input-group-sm w-100">
                                     <input type="text" name="table_search" class="form-control" placeholder="Search" ng-model="keyword">
                                     <div class="input-group-append">
@@ -33,11 +33,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col">
-                                <a ui-sref="add_product_category" class="btn btn-primary btn-flat pt-1 pb-1">
+                            <div class="col-6">
+                                <a ui-sref="add_product_category" class="btn btn-primary btn-flat pt-1 pb-1 float-left">
                                     <i class="fa fa-plus-circle"></i>
                                     Thêm mới
                                 </a>
+                                <button type="button" ng-click="deleteMultiple()" class="btn btn-danger btn-flat pt-1 pb-1 float-right" id="btnDelete" disabled>
+                                    <i class="fa fa-trash-o"></i>
+                                  Xóa 
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -45,6 +49,7 @@
                     <div class="card-body">
                         <table class="table table-bordered">
                             <tr>
+                                <th><input type="checkbox" name="checkAll" ng-click="selectAll()"  /></th>
                                 <th>ID</th>
                                 <th>Tên danh mục</th>
                                 <th>Ngày tạo</th>
@@ -52,6 +57,7 @@
                                 <th>Thao tác</th>
                             </tr>
                             <tr ng-repeat="item in productCategories">
+                                <td><input type="checkbox" name="check" ng-model="item.checked" /></td>
                                 <td>{{item.ID}}</td>
                                 <td>{{item.Name}}</td>
                                 <td>
@@ -60,7 +66,7 @@
                                 <td><span ng-class="{'badge bg-success' :item.Status == true, 'badge bg-danger':item.Status == false}">{{item.Status | statusFilter}}</span></td>
                                 <td>
                                     <button class="btn btn-flat btn-outline-primary" ui-sref="edit_product_category({id: item.ID})"><i class="fa fa-pencil"></i></button>
-                                    <button class="btn btn-flat btn-outline-danger"><i class="fa fa-trash"></i></button>
+                                    <button class="btn btn-flat btn-outline-danger" ng-click="deleteProductCategory(item.ID)"><i class="fa fa-trash"></i></button>
                                 </td>
                             </tr>
                         </table>

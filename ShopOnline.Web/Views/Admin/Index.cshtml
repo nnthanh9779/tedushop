@@ -7,11 +7,12 @@
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
-    <link href="~/Assets/admin/libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Assets/admin/node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!--Toastr : craete notification-->
-    <link href="~/Assets/admin/libs/toastr/toastr.css" rel="stylesheet" />
+    @*<link href="~/Assets/admin/node_modules/toastr/toastr.css" rel="stylesheet" />*@
+    <link href="~/Assets/admin/node_modules/toastr/build/toastr.css" rel="stylesheet" />
     <!-- Theme style -->
     <link href="~/Assets/admin/css/adminlte.min.css" rel="stylesheet" />
     <!-- Custom css -->
@@ -460,25 +461,29 @@
     </div>
     <!-- ./wrapper -->
     <!-- jQuery -->
-    <script src="~/Assets/admin/libs/jquery/dist/jquery.js"></script>
+    <script src="~/Assets/admin/node_modules/jquery/dist/jquery.js"></script>
     <!-- jQuery UI 1.11.4 -->
-    <script src="~/Assets/admin/libs/jqueri-ui/jquery-ui.js"></script>
+    <script src="~/Assets/admin/node_modules/jquery-ui_1.12/jquery-ui.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
     <script>$.widget.bridge('uibutton', $.ui.button)</script>
     <!-- Bootstrap 4 -->
-    <script src="~/Assets/admin/libs/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="~/Assets/admin/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <!-- SlimScroll -->
-    <script src="~/Assets/admin/libs/slimScroll/jquery.slimscroll.js"></script>
+    <script src="~/Assets/admin/node_modules/jquery-slimscroll/jquery.slimscroll.js"></script>
     <!-- FastClick -->
-    <script src="~/Assets/admin/libs/fastclick/lib/fastclick.js"></script>
+    <script src="~/Assets/admin/node_modules/fastclick/lib/fastclick.js"></script>
     <!-- AdminLTE App -->
     <script src="~/Assets/admin/js/adminlte.js"></script>
 
     <!-- Begin embed angular js -->
-    <script src="~/Assets/admin/libs/angular/angular.min.js"></script>
-    <script src="~/Assets/admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="~/Assets/admin/node_modules/angular/angular.min.js"></script>
+    <script src="~/Assets/admin/node_modules/angular-ui-router/release/angular-ui-router.js"></script>
     <!--Toastr : craete notification-->
-    <script src="~/Assets/admin/libs/toastr/toastr.js"></script>
+    <script src="~/Assets/admin/node_modules/toastr/toastr.js"></script>
+    <!--alert confirm-->
+    <script src="~/Assets/admin/node_modules/bootbox/dist/bootbox.min.js"></script>
+    <script src="~/Assets/admin/node_modules/ngbootbox/dist/ngBootbox.js"></script>
+
 
     <script src="~/app/app.js"></script>
     <script src="~/app/shared/modules/shoponline.common.js"></script>

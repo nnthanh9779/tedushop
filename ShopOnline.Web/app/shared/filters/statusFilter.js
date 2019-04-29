@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../assets/admin/libs/angular/angular.js" />
+﻿/// <reference path="../../../assets/admin/node_modules/angular/angular.js" />
 
 (function (app) {
     app.filter('statusFilter', function () {

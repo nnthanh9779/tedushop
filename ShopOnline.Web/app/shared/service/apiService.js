@@ -1,4 +1,4 @@
-﻿/// <reference path="../../../assets/admin/libs/angular/angular.js" />
+﻿/// <reference path="../../../assets/admin/node_modules/angular/angular.js" />
 
 (function (app) {
     app.service('apiService', apiService);
@@ -9,7 +9,8 @@
         return {
             get: get,
             post: post,
-            put: put
+            put: put,
+            del: del,
         };
 
         function get(url, params, success, failure) {
@@ -35,6 +36,19 @@
 
         function put(url, data, success, failure) {
             $http.put(url, data).then(function (result) {
+                success(result);
+            }, function (error) {
+                if (error.status === 401) {
+                    notificationService.displayError('Authenticate is required.'); //error not login
+                }
+                else if (failure != null) {
+                    failure(error);
+                }
+            });
+        }
+
+        function del(url, data, success, failure) {
+            $http.delete(url, data).then(function (result) {
                 success(result);
             }, function (error) {
                 if (error.status === 401) {
