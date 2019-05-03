@@ -116,7 +116,7 @@ namespace ShopOnline.Web.Api
 
 
         [Route("update")]
-        [HttpPut]
+        [HttpPut] 
         [AllowAnonymous] //cho phép post nặc danh, chưa cần đăng nhập
         public HttpResponseMessage Update(HttpRequestMessage request, ProductCategoryViewModel productCategoryVm)
         {

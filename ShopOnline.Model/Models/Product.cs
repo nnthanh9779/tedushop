@@ -44,6 +44,8 @@ namespace ShopOnline.Model.Models
 
         public int? ViewCount { set; get; }
 
+        public string Tags { set; get; }
+
         public int CategoryID { set; get; }
 
         [ForeignKey("CategoryID")]

@@ -1,10 +1,130 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title></title>
-</head>
-<body>
-    <h1>This is product add</h1>
-</body>
-</html>
+﻿ <!-- Content Header (Page header) -->
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1>
+                    Danh sách sản phẩm
+                </h1>
+            </div>
+            <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="">Sản phẩm</a></li>
+                    <li class="breadcrumb-item"><a ui-sref="product_categories">Danh sách sản phẩm</a></li>
+                    <li class="breadcrumb-item active">Thêm mới</li>
+                </ol>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Thêm mới</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <form role="form" novalidate name="frmAddProduct" ng-submit="AddProduct()">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="name">Tên sản phẩm</label>&nbsp;(<span class="text-danger">&#42;</span>)
+                                <input type="text" class="form-control placeholder-danger" id="name" name="name" ng-trim="true" placeholder="Nhập tên danh mục" ng-change="GetSeoTitle()" ng-model="product.Name" ng-maxlength="256" required>
+                                <small ng-show="frmAddProduct.name.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 256 ký tự.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="alias">Tiêu đề SEO</label>&nbsp;(<span class="text-danger">&#42;</span>)
+                                <input type="text" class="form-control placeholder-danger" id="alias" name="alias" ng-trim="true" placeholder="Nhập tiêu đề SEO" ng-model="product.Alias" ng-maxlength="256" required>
+                                <small ng-show="frmAddProduct.alias.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 256 ký tự.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="image">Ảnh sản phẩm </label>
+                                <input type="text" class="form-control" id="image" name="image" ng-model="product.Image" ng-maxlength="256" disabled required>
+                                <small ng-show="frmAddProduct.image.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 256 ký tự.</small>
+                                <button class="btn btn-outline-primary" type="button" ng-click="ChooseImage()">Chọn ảnh</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Giá sản phẩm</label>&nbsp;(<span class="text-danger">&#42;</span>)
+                                <input type="text" class="form-control placeholder-danger" id="price" name="price" ng-trim="true" placeholder="Nhập giá sản phẩm" ng-model="product.Price" numbers-only ng-maxlength="12" required>
+                                <small ng-show="frmAddProduct.price.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 12 số.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="promotionPrice">Giá kuyến mãi</label>
+                                <input type="text" class="form-control placeholder-danger" id="promotionPrice" ng-trim="true" name="promotionPrice" ng-model="product.PromotionPrice" numbers-only ng-maxlength="12" required>
+                                <small ng-show="frmAddProduct.promotionPrice.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 12 số.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="warranty">Bảo hành</label>
+                                <input type="text" class="form-control" id="warranty" name="warranty" ng-trim="true" numbers-only ng-model="product.Warranty">
+                                <small class="float-right">(Tháng).</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Mô tả ngắn</label>
+                                <textarea class="form-control" name="description" ng-trim="true" ng-model="product.Description" ng-maxlength="500"></textarea>
+                                <small ng-show="frmAddProduct.description.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 500 ký tự.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="content">Nội dung sản phẩm </label>
+                                <textarea class="form-control" name="content" ng-model="product.Content" ckeditor="ckeditorOptions"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Danh mục sản phẩm</label>
+                                <select name="categoryId" ng-model="product.CategoryID" ng-options="option.ID as option.Name for option in productCategories" class="form-control">
+                                    <option value="">Danh mục gốc</option>
+                                </select>
+                                <input type="hidden" name="categoryId" ng-model="product.CategoryID" />
+                            </div>
+                            <div class="form-group">
+                                <label for="tags">Tags</label>
+                                <input type="text" class="form-control" id="tags" name="tags" ng-trim="true" ng-model="product.Tags">
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Meta Keyword</label>
+                                <input type="text" class="form-control" id="metaKeyword" name="metaKeyword" ng-trim="true" ng-model="product.MetaKeyword" ng-maxlength="256">
+                                <small ng-show="frmAddProduct.metaKeyword.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 256 ký tự.</small>
+                            </div>
+                            <div class="form-group">
+                                <label for="name">Meta Description</label>
+                                <textarea class="form-control" id="metaDescription" name="metaDescription" ng-trim="true" ng-model="product.MetaDescription" ng-maxlength="256"></textarea>
+                                <small ng-show="frmAddProduct.metaDescription.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
+                                <small class="float-right">Tối đa 256 ký tự.</small>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="status" ng-model="product.Status" ng-checked="product.Status">
+                                <label class="form-check-label" for="status">Kích hoạt</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="homeFlag" ng-model="product.HomeFlag" ng-checked="product.HomeFlag">
+                                <label class="form-check-label" for="homeFlag">Hiển thị trang chủ</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="hotFlag" ng-model="product.HotFlag" ng-checked="product.HotFlag">
+                                <label class="form-check-label" for="hotFlag">Sản phẩm top</label>
+                            </div>
+                        </div>
+                        <!-- /.card-body -->
+                        <div class="card-footer">
+                            <button ui-sref="products" class="btn btn-default">Cancel</button>
+                            <button type="submit" ng-disabled="frmAddProduct.$invalid" class="btn btn-success pull-right">Submit</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- /.card -->
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->

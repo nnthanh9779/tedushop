@@ -34,7 +34,7 @@
                         <div class="card-body">
                             <div class="form-group">
                                 <label for="name">Tên danh mục</label>&nbsp;(<span class="text-danger">&#42;</span>)
-                                <input type="text" class="form-control placeholder-danger" id="name" name="name" placeholder="Nhập tên danh mục" ng-model="productCategory.Name" ng-maxlength="256" required>
+                                <input type="text" class="form-control placeholder-danger" id="name" name="name" placeholder="Nhập tên danh mục" ng-change="GetSeoTitle()" ng-model="productCategory.Name" ng-maxlength="256" required>
                                 <small ng-show="frmAddProductCategory.name.$error.maxlength" class="text-danger">Lỗi nhập không đúng định dạng hoặc vượt quá kí tự cho phép.</small>
                                 <small class="float-right">Tối đa 256 ký tự.</small>
                             </div>

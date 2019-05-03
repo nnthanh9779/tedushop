@@ -33,6 +33,8 @@ namespace ShopOnline.Web.Models
 
         public int? ViewCount { set; get; }
 
+        public string Tags { set; get; }
+
         public int CategoryID { set; get; }
 
         public DateTime? CreatedDate { set; get; }

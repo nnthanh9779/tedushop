@@ -13,9 +13,12 @@
         $scope.getProductCategories = getProductCategories;
         $scope.keyword = ''; //keyword searching
 
+        //search
         $scope.search = search;
+        //xoa 1
         $scope.deleteProductCategory = deleteProductCategory;
 
+        //Xoa tat ca
         $scope.selectAll = selectAll;
         $scope.isAll = false;
 
@@ -68,6 +71,7 @@
             }
         }, true);
 
+        //Xoa 1 theo id
         function deleteProductCategory(id) {
             $ngBootbox.confirm("Bạn có chắc muốn xóa ?").then(function () {
                 var config = {
